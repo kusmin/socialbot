@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ pagina.nome }}</h1>
+    <ul>
+        <li>{{ pagina.qtd_seguidores }}</li>
+        <li>{{ pagina.qtd_seguindo }}</li>
+        <li>{{ pagina.qtd_publicacoes }}</li>
+            {% if pagina.login %}
+        <li>{{ pagina.login.username }}</li>
+        <li>{{ pagina.login.password }}</li>
+            {% endif %}
+    </ul>
+</body>
+</html>

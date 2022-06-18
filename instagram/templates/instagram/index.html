@@ -1,0 +1,9 @@
+{% if list_page %}
+    <ul>
+    {% for pagina in list_page %}
+        <li><a href="/instagram/{{ pagina.id }}/">{{ pagina.nome }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Não tem paginas a serem listadas</p>
+{% endif %}
