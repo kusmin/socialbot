@@ -7,8 +7,6 @@ E
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 A
 socialbot/wsgi.py,8/b/8b7d80039ac0d50e93aee8c9f9840376495a0537
-A
-socialbot/urls.py,9/d/9d5d7a26c665fcd0572c22efae86d3a6cfc2e437
 C
 social_bot/admin.py,8/4/840287aa905beabf75bc163e8d4ddfc625731c43
 Q
