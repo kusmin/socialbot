@@ -6,14 +6,26 @@
 </head>
 <body>
     <h1>{{ pagina.nome }}</h1>
-    <ul>
-        <li>{{ pagina.qtd_seguidores }}</li>
-        <li>{{ pagina.qtd_seguindo }}</li>
-        <li>{{ pagina.qtd_publicacoes }}</li>
-            {% if pagina.login %}
-        <li>{{ pagina.login.username }}</li>
-        <li>{{ pagina.login.password }}</li>
-            {% endif %}
-    </ul>
+    <table>
+          <tr>
+              <th>Seguidores</th>
+              <th>Seguindo</th>
+              <th>Postagem</th>
+                {% if pagina.username %}
+                  <th>Usuário</th>
+                  <th>Senha</th>
+                 {% endif %}
+          </tr>
+         <tr>
+            <td>{{ pagina.qtd_seguidores }}</td>
+            <td>{{ pagina.qtd_seguindo }}</td>
+            <td>{{ pagina.qtd_publicacoes }}</td>
+                {% if pagina.username %}
+            <td>{{ pagina.username }}</td>
+            <td>{{ pagina.password }}</td>
+                {% endif %}
+        </tr>
+    </table>
+
 </body>
 </html>

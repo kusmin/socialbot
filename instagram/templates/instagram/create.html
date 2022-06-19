@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="{% url 'instagram:create' %}" method="post">{% csrf_token %}
+        <fieldset>
+            <legend><h1>Criar nova pagina Instagram</h1></legend>
+            <label>Nome: <input type="text" name="nome" placeholder="Nome" required  maxlength="128"/></label>
+            <label>Login de acesso: <input type="text" name="username" placeholder="username" required  maxlength="128"/></label>
+            <label>Senha de acesso: <input type="text" name="password" placeholder="password" required  maxlength="128"/></label>
+        </fieldset>
+        <input type="submit" value="Criar">
+    </form>
+</body>
+</html>

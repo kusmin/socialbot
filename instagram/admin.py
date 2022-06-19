@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import Login, Pagina
+from .models import Pagina
 
-admin.site.register(Login)
 admin.site.register(Pagina)
