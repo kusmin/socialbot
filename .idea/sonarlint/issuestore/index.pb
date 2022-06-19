@@ -25,7 +25,5 @@ C
 social_bot/tests.py,1/5/157517368d9c8df5ac566fe013e192e23890af0c
 D
 social_bot/models.py,b/b/bb5afc2f6c50a5a5956cc867cb7c5925cc2c0cc7
-E
-socialbot/settings.py,3/c/3c0baeb6d8da0107878f77c2ed6e405324ca7d11
 X
 (instagram/templates/instagram/index.html,3/8/3859e50a89e85598fd9989a9a814d488581c6088
