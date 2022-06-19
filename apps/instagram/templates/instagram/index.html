@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if list_page %}
+        <ul>
+        {% for pagina in list_page %}
+            <li><a href="{% url 'instagram:detail' pagina.id %}">{{ pagina.nome }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não tem paginas a serem listadas</p>
+    {% endif %}
+</body>
+</html>
