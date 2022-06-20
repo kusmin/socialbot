@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_bot.apps.SocialBotConfig',
-    'apps.home'
+    'apps.home',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static/",
-# ]
+STATICFILES_DIRS = (
+    BASE_DIR / "apps/static",
+)
