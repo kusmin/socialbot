@@ -85,11 +85,3 @@ R
 "apps/templates/home/page-user.html,a/8/a8b1662f2f50557e668d0e7487e1b463bdd9abd4
 A
 socialbot/wsgi.py,8/b/8b7d80039ac0d50e93aee8c9f9840376495a0537
-B
-apps/home/views.py,5/7/57d1e9fbc635f1e2c181a1cb866b0bd0062316b9
-A
-socialbot/urls.py,9/d/9d5d7a26c665fcd0572c22efae86d3a6cfc2e437
-E
-socialbot/settings.py,3/c/3c0baeb6d8da0107878f77c2ed6e405324ca7d11
-A
-apps/home/urls.py,3/4/34bbd7bc64a44692963a3f817fc3530bed0f8d2c
