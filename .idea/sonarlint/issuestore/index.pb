@@ -45,8 +45,6 @@ E
 socialbot/__init__.py,8/1/81b357dd2a75c2bc9d8ffe1870ce1c8d070c21d6
 A
 socialbot/asgi.py,c/4/c4e7b972caba06a8cfbc0df434f757b79d6df1f0
-Y
-)apps/templates/includes/fixed-plugin.html,b/c/bc5dafd08000bb471ed3d85e792a431d6bc06fc0
 \
 ,apps/static/assets/scss/black-dashboard.scss,c/5/c5dfe69d61276c87b2e650040ed02254256ef803
 S
@@ -57,16 +55,12 @@ $apps/templates/layouts/base-rtl.html,9/0/908530259a1a3dc88675fd15ce83ddc6dcf27
 .apps/instagram/templates/instagram/detail.html,0/9/09ce0f1c87ef941752ed91d535cc825038436988
 F
 apps/instagram/urls.py,e/0/e001c265bdb61dfbab5817599ee8f6fa1fa6057d
-Z
-*apps/static/assets/css/black-dashboard.css,2/3/238af5daced6c93fd4f53dbd594ece5c7dee6b2b
 W
 'apps/templates/includes/navigation.html,1/a/1a0f481ab773598d041d3d41d76d1e9a6c5d1d1a
 J
 static/admin/js/inlines.js,5/8/586828f87171ba051c507b94d43e2b0c00d94786
 ]
 -apps/instagram/templates/instagram/index.html,3/a/3a1a8397b4cb49062d9b498025fec4c2aeebd465
-P
- apps/templates/layouts/base.html,a/7/a7df0e1c405d9d961bbf0b01b6be79d159bfeefc
 B
 apps/home/admin.py,6/4/642e87cc126c64448d818bb4871c14e00bb002ca
 ^

@@ -58,24 +58,9 @@
                   &nbsp; &nbsp;
                   Ainda não tem uma conta ? <a href="{% url 'register' %}" class="text-primary">Crie agora !</a>
                     <div>
-                     <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Logar por rede social</a>
 
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h4 class="modal-title" id="myModalLabel">Escolha sua rede social favorita</h4>
-                            </div>
-                            <div class="modal-body">
-<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
+                        <a  href="{% url 'social:begin' 'facebook' %}" target="_blank">Entrar com o Facebook</a>
+
                 </div>
                 </div>
 
