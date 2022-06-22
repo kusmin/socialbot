@@ -41,8 +41,6 @@ L
 apps/authentication/tests.py,b/9/b95963bc45363b40eaf13a89b3d023e80d01ea1f
 K
 apps/authentication/urls.py,8/8/882579f45fb46fab7a5ddb68dd5cd251d57b288e
-L
-apps/authentication/views.py,4/2/4253697846a88c62d2c2daf9a2e28fae57a6a475
 G
 apps/instagram/views.py,e/1/e1714e609720926aac6e8bcc3b3ffdfdb911ee78
 E
@@ -51,8 +49,6 @@ A
 socialbot/asgi.py,c/4/c4e7b972caba06a8cfbc0df434f757b79d6df1f0
 Y
 )apps/templates/includes/fixed-plugin.html,b/c/bc5dafd08000bb471ed3d85e792a431d6bc06fc0
-X
-(apps/static/assets/js/black-dashboard.js,3/8/38f8354bc43bcc80e55e6fdf0304d8cbfcc17445
 \
 ,apps/static/assets/scss/black-dashboard.scss,c/5/c5dfe69d61276c87b2e650040ed02254256ef803
 S
@@ -69,16 +65,12 @@ W
 'apps/templates/includes/navigation.html,1/a/1a0f481ab773598d041d3d41d76d1e9a6c5d1d1a
 J
 static/admin/js/inlines.js,5/8/586828f87171ba051c507b94d43e2b0c00d94786
-T
-$apps/templates/includes/sidebar.html,9/e/9e3c3cc671840eeee52c974768be63f9d51248f2
 ]
 -apps/instagram/templates/instagram/index.html,3/a/3a1a8397b4cb49062d9b498025fec4c2aeebd465
 P
  apps/templates/layouts/base.html,a/7/a7df0e1c405d9d961bbf0b01b6be79d159bfeefc
 B
 apps/home/admin.py,6/4/642e87cc126c64448d818bb4871c14e00bb002ca
-N
-apps/templates/home/index.html,d/0/d093ff297d7b65ce26adb0841c2fabb2bc32c49e
 ^
 .apps/static/assets/css/black-dashboard.css.map,6/6/66dc0ecad504dbca63be11f6b036fcbb018d2d1b
 R

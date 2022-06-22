@@ -6,6 +6,8 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v14.0&appId=445702973592464&autoLogAppEvents=1" nonce="u749am5E"></script>
 
         <div class="row">
           <div class="col-md-8">
@@ -22,7 +24,7 @@
                       {% if msg %}
                         <span class="text-danger">{{ msg }}</span>
                       {% else %}
-                        Add your credentials
+                        Adicione suas credenciais
                       {% endif %}  
                   </h6>
                 </div>
@@ -54,8 +56,30 @@
                 <div class="card-footer">
                   <button type="submit" name="login" class="btn btn-fill btn-primary">Login</button>
                   &nbsp; &nbsp;
-                  Don't have an account? <a href="{% url 'register' %}" class="text-primary">Create</a>
+                  Ainda não tem uma conta ? <a href="{% url 'register' %}" class="text-primary">Crie agora !</a>
+                    <div>
+                     <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Logar por rede social</a>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="myModalLabel">Escolha sua rede social favorita</h4>
+                            </div>
+                            <div class="modal-body">
+                                    <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
                 </div>
+                </div>
+
 
               </form>
 

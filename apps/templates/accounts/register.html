@@ -22,7 +22,7 @@
                       {% if msg %}
                         <span class="text-danger">{{ msg | safe }}</span>
                       {% else %}
-                        Add your credentials
+                        Adicione suas credenciais
                       {% endif %}  
                   </h6>
                 </div>
@@ -30,7 +30,7 @@
               {% if success %}
 
                 <p>
-                  Please <a href={% url 'login' %}>authenticate</a> using the new account.
+                  Por favor <a href={% url 'login' %}>authenticate</a> use a nova conta.
                 </p>  
 
               {% else %}
@@ -79,9 +79,9 @@
 
                 </div>
                 <div class="card-footer">
-                  <button type="submit" name="register" class="btn btn-fill btn-primary">Register</button>
+                  <button type="submit" name="register" class="btn btn-fill btn-primary">Registrar</button>
                   &nbsp; &nbsp;
-                  Have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
+                  Já tem uma conta ? <a href="{% url 'login' %}" class="text-primary">Login</a>
                 </div>
 
               {% endif %} 

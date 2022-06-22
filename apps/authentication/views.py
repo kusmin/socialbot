@@ -49,7 +49,7 @@ def register_user(request):
             # return redirect("/login/")
 
         else:
-            msg = 'Form is not valid'
+            msg = 'Formulario de cadastro contem erros!'
     else:
         form = SignUpForm()
 
