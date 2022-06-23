@@ -49,8 +49,6 @@ A
 ,apps/static/assets/scss/black-dashboard.scss,c/5/c5dfe69d61276c87b2e650040ed02254256ef803
 S
 #apps/templates/includes/footer.html,5/a/5ac98d0284f683fa925ea07205a11368c8d1a09b
-T
-$apps/templates/layouts/base-rtl.html,9/0/908530259a1a3dc88675fd15ce83ddc6dcf27906
 ^
 .apps/instagram/templates/instagram/detail.html,0/9/09ce0f1c87ef941752ed91d535cc825038436988
 F

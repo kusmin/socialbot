@@ -1,3 +1,4 @@
 /static
 .history
 .idea
+/app/__pycache__/
