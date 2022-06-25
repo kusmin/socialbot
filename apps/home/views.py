@@ -26,10 +26,13 @@ def pages(request):
     try:
 
         load_template = request.path.split('/')[-1]
-
+        print(load_template)
         if load_template == 'admin':
             return HttpResponseRedirect(reverse('admin:index'))
         context['segment'] = load_template
+
+        if load_template == 'instagram':
+            return HttpResponseRedirect(reverse('instagram:index'))
 
         html_template = loader.get_template('home/' + load_template)
         return HttpResponse(html_template.render(context, request))

@@ -1,14 +1,17 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import generic
 
 from apps.instagram.forms import PaginaForm
 from apps.instagram.models import Pagina
 from django.contrib.auth.decorators import login_required
 
+
+@method_decorator(login_required, name='dispatch')
 class IndexView(generic.ListView):
-    template_name = 'instagram/index.html'
+    template_name = 'home/instagram.html'
     context_object_name = 'list_page'
 
     def get_queryset(self):
@@ -17,9 +20,10 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Pagina
-    template_name = 'home/page-bot-instagram.html'
+    template_name = 'home/instagram.html'
 
 
+@method_decorator(login_required, name='dispatch')
 class CreateView(generic.CreateView):
     model = Pagina
     form_class = PaginaForm
@@ -33,7 +37,7 @@ class CreateView(generic.CreateView):
             pagina.save()
             return HttpResponseRedirect(reverse_lazy('instagram:detail', args=[pagina.id]))
         else:
-            return render(request, 'page-bot-instagram.html', {})
+            return render(request, 'instagram.html', {})
 
 
 # @login_required(login_url="/login/")

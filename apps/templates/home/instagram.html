@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page Bot Instagram {% endblock %}
+{% block title %}  Instagram {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -14,37 +14,14 @@
       <div class="card-header">
         <h5 class="title">Instagram</h5>
       </div>
-      <div class="card-body">
-
-        <form id="create" action="{% url 'instagram:create' %}" method="post">{% csrf_token %}
-          <div class="row">
-              <div class="col-md-3 pr-md-1">
-              <div class="form-group">
-                <label>Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="Insira um nome para a conta" required>
-              </div>
-            </div>
-            <div class="col-md-3 px-md-1">
-              <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" required>
-              </div>
-            </div>
-            <div class="col-md-3 pl-md-1">
-              <div class="form-group">
-                <label>Senha</label>
-                <input type="password" name="password" class="form-control" required>
-              </div>
-                </div>
-             <div class="card-footer">
-              <button type="submit" class="btn btn-fill btn-primary">Salvar</button>
-            </div>
-            </div>
-        </form>
-      </div>
+        {% include 'instagram/create.html' %}
 
     </div>
   </div>
+
+    {% include 'instagram/index.html' %}
+
+    {% include 'instagram/detail.html' %}
 
 
   <div class="col-md-4">

@@ -1,18 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form method="post" action="{% url 'instagram:create' %}" method="post">{% csrf_token %}
-        <fieldset>
-            <legend><h1>Criar nova pagina Instagram</h1></legend>
-            <label>Nome: <input type="text" name="nome" placeholder="Nome" required  maxlength="128"/></label>
-            <label>Login de acesso: <input type="text" name="username" placeholder="username" required  maxlength="128"/></label>
-            <label>Senha de acesso: <input type="text" name="password" placeholder="password" required  maxlength="128"/></label>
-        </fieldset>
-        <input type="submit" value="Criar">
-    </form>
-</body>
-</html>
+<div class="card-body">
+
+        <form id="create" action="{% url 'instagram:create' %}" method="post">{% csrf_token %}
+          <div class="row">
+              <div class="col-md-3 pr-md-1">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" name="nome" placeholder="Insira um nome para a conta" required>
+              </div>
+            </div>
+            <div class="col-md-3 px-md-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" required placeholder="usuario" placeholder>
+              </div>
+            </div>
+            <div class="col-md-3 pl-md-1">
+              <div class="form-group">
+                <label>Senha</label>
+                <input type="password" name="password" class="form-control" placeholder="Senha" required>
+              </div>
+                </div>
+             <div class="card-footer">
+              <button type="submit" class="btn btn-fill btn-primary">Salvar</button>
+            </div>
+            </div>
+        </form>
+      </div>

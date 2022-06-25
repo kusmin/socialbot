@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>{{ pagina.nome }}</h1>
+
+    <h1>detalhes {{ pagina.nome }}</h1>
     <table>
           <tr>
-              <th>Seguidores</th>
-              <th>Seguindo</th>
-              <th>Postagem</th>
                 {% if pagina.username %}
                   <th>Usuário</th>
                   <th>Senha</th>
                  {% endif %}
           </tr>
          <tr>
-            <td>{{ pagina.qtd_seguidores }}</td>
-            <td>{{ pagina.qtd_seguindo }}</td>
-            <td>{{ pagina.qtd_publicacoes }}</td>
                 {% if pagina.username %}
             <td>{{ pagina.username }}</td>
             <td>{{ pagina.password }}</td>
                 {% endif %}
         </tr>
     </table>
-
-</body>
-</html>

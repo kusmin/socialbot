@@ -21,8 +21,6 @@ A
 socialbot/asgi.py,c/4/c4e7b972caba06a8cfbc0df434f757b79d6df1f0
 \
 ,apps/static/assets/scss/black-dashboard.scss,c/5/c5dfe69d61276c87b2e650040ed02254256ef803
-S
-#apps/templates/includes/footer.html,5/a/5ac98d0284f683fa925ea07205a11368c8d1a09b
 J
 static/admin/js/inlines.js,5/8/586828f87171ba051c507b94d43e2b0c00d94786
 ^
@@ -49,27 +47,11 @@ Y
 )apps/templates/includes/fixed-plugin.html,b/c/bc5dafd08000bb471ed3d85e792a431d6bc06fc0
 N
 apps/templates/home/index.html,d/0/d093ff297d7b65ce26adb0841c2fabb2bc32c49e
-N
-apps/templates/home/login.html,d/c/dcd5d734924c216c45545c34b1aff9d40ed2802a
-S
-#apps/templates/instagram/index.html,0/8/0882e6f8d94183b634d3f4e5879aefcff0fbdeac
-R
-"apps/templates/home/page-user.html,a/8/a8b1662f2f50557e668d0e7487e1b463bdd9abd4
-W
-'apps/templates/includes/navigation.html,1/a/1a0f481ab773598d041d3d41d76d1e9a6c5d1d1a
 D
 docker/bd/Dockerfile,8/9/893ca13c46897848e618b79713e8898d38f38397
-B
-apps/home/views.py,5/7/57d1e9fbc635f1e2c181a1cb866b0bd0062316b9
-L
-apps/authentication/views.py,4/2/4253697846a88c62d2c2daf9a2e28fae57a6a475
 L
 apps/authentication/tests.py,b/9/b95963bc45363b40eaf13a89b3d023e80d01ea1f
-M
-apps/authentication/models.py,4/a/4a1b2be16487888b91b7defaacc0027481736ecd
 L
 apps/authentication/forms.py,1/6/16fb76c228665af43a0422ab22c9650b146c9033
-T
-$apps/templates/instagram/create.html,e/9/e94183bc8826efd5feb398a4e0d71464021ff303
 Y
 )apps/templates/home/page-rtl-support.html,8/4/847436c7680f5839b1478df7605d2eade028d637
