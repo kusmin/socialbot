@@ -63,6 +63,10 @@
   background: #E74B37;
 }
 
+.btn-social:hover{
+  color: #FFF;
+}
+
 .color-white{
   color: #FFF;
 }

@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
     'apps.home',
     'social_django',
     'sslserver',
+    'fontawesomefree'
 ]
 
 MIDDLEWARE = [
@@ -62,8 +67,11 @@ LOGOUT_URL = 'login'
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
 SOCIAL_AUTH_FACEBOOK_KEY = '445702973592464'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'e3e06c1d676a03575ac8dac6ffef2477'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '482756285325-irb95qe43nqa5e21vfb7ahhrcd73g5i5.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "apps/templates")
 TEMPLATES = [
@@ -94,11 +102,11 @@ WSGI_APPLICATION = 'socialbot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'social',
-        'USER': 'social',
-        'PASSWORD': 'social',
-        'HOST': '127.0.0.1',
-        'PORT': '5444',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
         'TEST': {
             'NAME': 'socialtest'
         }
@@ -108,7 +116,7 @@ DATABASES = {
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.google.GoogleOAuth2',
-     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
     # 'users.backends.AuthBackend',
