@@ -4,70 +4,112 @@
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
+    <link href="{{ ASSETS_ROOT }}/css/instagram.css" rel="stylesheet"/>
 {% endblock stylesheets %}
 
 {% block content %}
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="title">Instagram</h5>
-      </div>
-        {% include 'instagram/create.html' %}
+    {% if messages %}
 
-    </div>
-  </div>
+                <div class="modal fade show" id="modalMensagem" tabindex="-1" role="dialog" aria-labelledby="modalMensagem" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notificação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                       {% for message in messages %}
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }} </p>
+                            {% endfor %}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Nova conta</h5>
+                </div>
+                {% include 'instagram/create.html' %}
 
-    {% include 'instagram/index.html' %}
-
-    {% include 'instagram/detail.html' %}
-
-
-  <div class="col-md-4">
-    <div class="card card-user">
-      <div class="card-body">
-        <p class="card-text">
-          <div class="author">
-            <div class="block block-one"></div>
-            <div class="block block-two"></div>
-            <div class="block block-three"></div>
-            <div class="block block-four"></div>
-            <a href="javascript:void(0)">
-              <img class="avatar" src="{{ ASSETS_ROOT }}/img/emilyz.jpg" alt="Bill Gates photo - when buys a Linux.">
-              <h5 class="title">
-                {{ request.user.username }}
-              </h5>
-            </a>
-            <p class="description">
-              {{ request.user.email }}
-            </p>
-          </div>
-        </p>
-        <div class="card-description">
-          Linux, my favorite OS - I admin that windows is just a big mistake.
-          Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+            </div>
         </div>
-      </div>
-      <div class="card-footer">
-        <div class="button-container">
-          <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">
-            <i class="fab fa-facebook"></i>
-          </button>
-          <button href="javascript:void(0)" class="btn btn-icon btn-round btn-twitter">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button href="javascript:void(0)" class="btn btn-icon btn-round btn-google">
-            <i class="fab fa-google-plus"></i>
-          </button>
+
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Lista de contas</h5>
+                </div>
+                {% include 'instagram/index.html' %}
+
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+{#        {% include 'instagram/detail.html' %}#}
+
+
+{#        <div class="col-md-4">#}
+{#            <div class="card card-user">#}
+{#                <div class="card-body">#}
+{#                    <p class="card-text">#}
+{#                    <div class="author">#}
+{#                        <div class="block block-one"></div>#}
+{#                        <div class="block block-two"></div>#}
+{#                        <div class="block block-three"></div>#}
+{#                        <div class="block block-four"></div>#}
+{#                        <a href="javascript:void(0)">#}
+{#                            <img class="avatar" src="{{ ASSETS_ROOT }}/img/emilyz.jpg"#}
+{#                                 alt="Bill Gates photo - when buys a Linux.">#}
+{#                            <h5 class="title">#}
+{#                                {{ request.user.username }}#}
+{#                            </h5>#}
+{#                        </a>#}
+{#                        <p class="description">#}
+{#                            {{ request.user.email }}#}
+{#                        </p>#}
+{#                    </div>#}
+{#                    </p>#}
+{#                    <div class="card-description">#}
+{#                        Linux, my favorite OS - I admin that windows is just a big mistake.#}
+{#                        Do not be scared of the truth because we need to restart the human foundation in truth And I#}
+{#                        love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="card-footer">#}
+{#                    <div class="button-container">#}
+{#                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">#}
+{#                            <i class="fab fa-facebook"></i>#}
+{#                        </button>#}
+{#                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-twitter">#}
+{#                            <i class="fab fa-twitter"></i>#}
+{#                        </button>#}
+{#                        <button href="javascript:void(0)" class="btn btn-icon btn-round btn-google">#}
+{#                            <i class="fab fa-google-plus"></i>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
 
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+    <script>
+    $(document).ready(function() {
+    $('#modalMensagem').modal('show');
+})
+    </script>
+{% endblock javascripts %}

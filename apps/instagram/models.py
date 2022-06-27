@@ -1,9 +1,10 @@
 import datetime
 
-from django.db import models
-from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
+from django.db import models
+from django.urls import reverse
+from django.utils import timezone
 
 
 class Categoria(models.Model):
@@ -23,13 +24,17 @@ class Pagina(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ('nome' , 'user')
+        unique_together = ('nome', 'user')
 
     def __str__(self):
         return self.nome
 
     def data_criacao(self):
         return self.data_criacao >= timezone.now() - datetime.timedelta(days=1)
+
+    def get_absolute_url(self):
+        return reverse('instagram:index')
+
 
 class ProcessarBot(models.Model):
     nome = models.CharField(max_length=128, null=True, blank=True)

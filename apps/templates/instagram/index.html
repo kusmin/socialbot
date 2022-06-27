@@ -1,14 +1,59 @@
-<div>
-    Listagem de contas
-    {% if list_page %}
-        <ul>
+{% if list_page %}
+<div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <label>Nome</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-md-1">
+                        <div class="form-group">
+                            <label>Username</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pl-md-1">
+                        <div class="form-group">
+                            <label>Senha</label>
+                        </div>
+                    </div>
+
+                </div>
+
         {% for pagina in list_page %}
-            <li><a href="{% url 'instagram:detail' pagina.id %}">{{ pagina.nome }}</a></li>
+            <form id="create" action="{% url 'instagram:updated' pagina.id %}" method="POST">{% csrf_token %}
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nome" placeholder="Insira um nome para a conta"
+                                   value = {{ pagina.nome }} required>
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-md-1">
+                        <div class="form-group">
+                            <input type="text" name="username" class="form-control" value = {{ pagina.username }} required placeholder="usuario" placeholder>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pl-md-1">
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" value = {{ pagina.password }} placeholder="Senha" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pl-md-1">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-fill btn-primary btn-sem-margem">Editar</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 pl-md-1">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-fill btn-danger btn-sem-margem" ><a href="{% url 'instagram:delete' pagina.id %}">Excluir</a></button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
         {% endfor %}
-        </ul>
-    {% else %}
-        <p>Não tem paginas a serem listadas</p>
-    {% endif %}
 
 </div>
+{% endif %}
 

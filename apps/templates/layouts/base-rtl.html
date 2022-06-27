@@ -2,84 +2,98 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9C27Z0QXN7"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-9C27Z0QXN7');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-9C27Z0QXN7');
     </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NK4LZJQ');</script>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NK4LZJQ');</script>
     <!-- End Google Tag Manager -->
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ ASSETS_ROOT }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ ASSETS_ROOT }}/img/favicon.png">
-  <link rel="canonical" href="https://appseed.us/admin-dashboards/django-dashboard-black">
-  
-  <title>
-    Dashboard Social - {% block title %}{% endblock %} | Renan-Dev
-  </title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ ASSETS_ROOT }}/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="{{ ASSETS_ROOT }}/img/favicon.png">
+    <link rel="canonical" href="https://appseed.us/admin-dashboards/django-dashboard-black">
 
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <!-- Nucleo Icons -->
-  <link href="{{ ASSETS_ROOT }}/css/nucleo-icons.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link href="{{ ASSETS_ROOT }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ ASSETS_ROOT }}/demo/demo.css" rel="stylesheet" />
+    <title>
+        Dashboard Social - {% block title %}{% endblock %} | Renan-Dev
+    </title>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="{{ ASSETS_ROOT }}/css/nucleo-icons.css" rel="stylesheet"/>
+    <!-- CSS Files -->
+    <link href="{{ ASSETS_ROOT }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css" rel="stylesheet"/>
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{ ASSETS_ROOT }}/demo/demo.css" rel="stylesheet"/>
 
     <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
 
-  <!-- Specific Page CSS goes HERE  -->
-  {% block stylesheets %}{% endblock stylesheets %}
+    <!-- Specific Page CSS goes HERE  -->
+    {% block stylesheets %}{% endblock stylesheets %}
 
 </head>
 
 <body class="rtl menu-on-right ">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK4LZJQ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-  <div class="wrapper">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK4LZJQ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrapper">
 
     {% include 'includes/sidebar-rtl.html' %}
 
     <div class="main-panel">
 
-      {% include 'includes/navigation-rtl.html' %}
+        {% include 'includes/navigation-rtl.html' %}
 
-      <div class="content">
+        <div class="content">
 
-        {% block content %}{% endblock content %}
+            {% block content %}{% endblock content %}
 
-      </div>
+        </div>
 
-      {% include 'includes/footer.html' %}
+        {% include 'includes/footer.html' %}
 
     </div>
-    
-  </div>
 
-  {% include 'includes/fixed-plugin.html' %}
+</div>
 
-  {% include 'includes/scripts.html' %}
+{% include 'includes/fixed-plugin.html' %}
 
-  {% include 'includes/scripts-sidebar.html' %}
+{% include 'includes/scripts.html' %}
 
-  <!-- Specific Page JS goes HERE  -->
-  {% block javascripts %}{% endblock javascripts %}
+{% include 'includes/scripts-sidebar.html' %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
 
 </body>
 

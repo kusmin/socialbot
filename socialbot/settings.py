@@ -68,10 +68,20 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '445702973592464'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e3e06c1d676a03575ac8dac6ffef2477'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '482756285325-irb95qe43nqa5e21vfb7ahhrcd73g5i5.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_FACEBOOK_KEY = env("FACEBOOK_KEY")
+SOCIAL_AUTH_FACEBOOK_SECRET = env("FACEBOOK_SECRET")
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env("GOOGLE_KEY")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env("GOOGLE_SECRET")
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = env("LINKEDIN_KEY")
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = env("LINKEDIN_SECRET")
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE =     ['r_emailaddress','r_liteprofile']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['email-address']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [('id', 'id'),
+                               ('firstName', 'first_name'),
+                               ('lastName', 'last_name'),
+                               ('emailAddress', 'email_address')]
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "apps/templates")
 TEMPLATES = [
@@ -117,6 +127,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
     # 'users.backends.AuthBackend',
@@ -140,7 +151,6 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
     ('picture', 'picture'),
     ('link', 'profile_url'),
 ]
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
