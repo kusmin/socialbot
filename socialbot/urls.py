@@ -23,7 +23,7 @@ urlpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + 
     path("", include("apps.authentication.urls")),
 
     path('instagram/', include('apps.instagram.urls')),
-
+    path('tag/', include('apps.tag.urls')),
     path("", include("apps.home.urls"))
 
 ]

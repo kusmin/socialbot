@@ -1,0 +1,24 @@
+{% if list_page %}
+<div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <label>Nome</label>
+                        </div>
+                    </div>
+                </div>
+
+        {% for tag in list_page %}
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nome" placeholder="Insira um nome para a conta"
+                                   value = {{ tag.nome }} required>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+
+</div>
+{% endif %}
+

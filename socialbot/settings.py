@@ -45,9 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_bot.apps.SocialBotConfig',
     'apps.home',
+    'apps.tag.apps.TagConfig',
     'social_django',
+    'rest_framework.authtoken',
     'sslserver',
-    'fontawesomefree'
+    'rest_framework',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +135,13 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.twitter.TwitterOAuth',
     # 'users.backends.AuthBackend',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',

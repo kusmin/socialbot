@@ -1,0 +1,20 @@
+<div class="card-body">
+
+    <form id="create" action="{% url 'tag:create_categoria' %}" method="post">{% csrf_token %}
+
+        <div class="row">
+
+            <div class="col-md-3 pr-md-1">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Insira uma nova categoria"
+                           required>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>
+

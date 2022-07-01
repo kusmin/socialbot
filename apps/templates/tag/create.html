@@ -1,0 +1,32 @@
+<div class="card-body">
+
+    <form id="create" action="{% url 'tag:create' %}" method="post">{% csrf_token %}
+
+        <div class="row">
+
+            <div class="col-md-3 pr-md-1">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Insira uma nova tag"
+                           required>
+                </div>
+            </div>
+{#            <div class="col-md-3 pr-md-1">#}
+{#                <div class="form-group">#}
+{#                      <label>Categorias</label>#}
+{#                    <input type="text" class="form-control" id="inputItemCategoria" name="categoria" placeholder="Insira categorais">#}
+{#                    <button type="button" onclick="return addItem('listCategorias')">add</button>#}
+{##}
+{##}
+{#                    <ul id="listCategorias">#}
+{##}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+            <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>
+

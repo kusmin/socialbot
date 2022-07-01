@@ -39,15 +39,26 @@ class UpdateView(SuccessMessageMixin,UpdateView):
         else:
             return render(self.request, 'instagram.html', {})
 
+
 @method_decorator(login_required, name='dispatch')
 class UpdateViewDelete(DeleteView, SuccessMessageMixin):
     model = Pagina
+    form_class = PaginaForm
     template_name = 'home/instagram.html'
     success_message = 'Conta deletada com sucesso'
 
     def get_object(self):
         id = self.kwargs.get('pk')
         return get_object_or_404(Pagina, id=id)
+
+    def put(self, *args, **kwargs):
+        if self.form_class.is_valid():
+            pagina = self.form_class.save(commit=False)
+            pagina.save()
+            return render(self.request, reverse_lazy('instagram:index'))
+        else:
+            return render(self.request, 'instagram.html', {})
+
 
 class DetailView(generic.DetailView):
     model = Pagina

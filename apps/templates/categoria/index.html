@@ -1,0 +1,52 @@
+{% if list_page %}
+<div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <label>Nome</label>
+                        </div>
+                    </div>
+                </div>
+
+        {% for categoria in list_page %}
+                <div class="row">
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <p  class="form-control"
+                                 >{{ categoria.nome }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pr-md-1">
+                        <div class="form-group">
+                            <button onclick="editarCategoria()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarCategoria">
+                                  Editar
+                            </button>
+                            <div class="modal fade" id="editarCategoria" tabindex="-1" role="dialog" aria-labelledby="editarCategoria" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Editar {{ categoria.nome }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <ul id="listTags">
+
+                                    </ul>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+
+</div>
+{% endif %}
+

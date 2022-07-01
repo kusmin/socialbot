@@ -1,0 +1,99 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}  Categorias {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+    <link href="{{ ASSETS_ROOT }}/css/instagram.css" rel="stylesheet"/>
+{% endblock stylesheets %}
+
+{% block content %}
+
+    {% if messages %}
+
+                <div class="modal fade show" id="modalMensagem" tabindex="-1" role="dialog" aria-labelledby="modalMensagem" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notificação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                       {% for message in messages %}
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }} </p>
+                            {% endfor %}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Nova categoria</h5>
+                </div>
+                {% include 'categoria/create.html' %}
+
+            </div>
+        </div>
+
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Lista de categorias</h5>
+                </div>
+                {% include 'categoria/index.html' %}
+
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+    $(document).ready(function() {
+    $('#modalMensagem').modal('show');
+})
+
+    function addItem(list) {
+      const nomeCategoria = document.getElementById('inputItemCategoria').value
+      if(nomeCategoria){
+          const listaCategorias = document.getElementById(list);
+          const listItem = document.createElement("li");
+          listItem.innerText = nomeCategoria; // passed the field.
+          listaCategorias.appendChild(listItem);
+      }
+       // stop submission
+    }
+
+    function editarCategoria() {
+        $.ajax({
+        type: "GET",
+        url: "{% url 'tag:tags' %}",
+        success: function(data){
+            console.log(data);
+            const listarTags = document.getElementById("listTags");
+            console.log(listarTags);
+            data.forEach(function(tag){
+                console.log(tag);
+                const listItem = document.createElement("li");
+                listItem.innerText = tag.nome;
+                listarTags.appendChild(listItem)
+            })
+        },
+        error: function(response){
+            console.log(response);
+        }
+    })
+    }
+
+    </script>
+{% endblock javascripts %}

@@ -7,12 +7,13 @@ from django.urls import reverse
 from django.utils import timezone
 
 
-class Categoria(models.Model):
-    nome = models.CharField(max_length=128, unique=True)
-    tags = ArrayField(ArrayField(models.CharField(max_length=255)))
-
-    def __str__(self):
-        return self.nome
+# class Categoria(models.Model):
+#     nome = models.CharField(max_length=128, unique=True)
+#     tags = ArrayField(ArrayField(models.CharField(max_length=255)))
+#
+#     def __str__(self):
+#         return self.nome
+from apps.tag.models import Categoria
 
 
 class Pagina(models.Model):
